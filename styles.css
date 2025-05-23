@@ -1,0 +1,70 @@
+#inputPaginasLeidas {
+  width: 6em;
+  margin-right: 1em;
+}
+
+.oculto {
+  display: none;
+}
+
+#formulario {
+  background-color: #495057;
+  color: white;
+  margin: 20px;
+  border: 2px solid grey;
+  padding: 3%;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#inputTitulo,
+#inputAutor,
+#inputPaginasTotales {
+  width: 100%;
+  padding: 0.2em;
+  margin-bottom: 10px;
+  background-color: bisque;
+}
+
+#btn-agregar-libro {
+  color: #373b3e;
+  padding: 1%;
+  cursor: pointer;
+}
+
+#btn-agregar-libro :hover {
+  background-color: antiquewhite;
+}
+
+.inputPaginasLeidas {
+  background-color: #dbcfcf;
+  margin-right: 8px;
+  padding: 4px;
+  width: 25%;
+}
+
+.btn-leer {
+  margin-right: 8px;
+  padding: 6px;
+  color: aquamarine;
+}
+
+#barra-progreso {
+  width: 25%;
+  background-color: grey;
+}
+
+#mi-progreso {
+  height: 30px;
+  background-color: #04aa6d;
+  text-align: center; 
+  line-height: 30px; 
+  color: white;
+}
+
+
