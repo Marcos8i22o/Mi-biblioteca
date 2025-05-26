@@ -6,6 +6,8 @@ bibliotecaManager.cargarBiblioteca();
 actualizarUI()
 
 const $botonAgregarLibro = document.querySelector("#btn-agregar-libro");
+const $botonBorrarBiblioteca = document.querySelector("#btn-borrar-biblioteca");
+
 
 $botonAgregarLibro.addEventListener("click", function (e) {
     e.preventDefault();
@@ -15,12 +17,12 @@ $botonAgregarLibro.addEventListener("click", function (e) {
     const paginasTotales = document.querySelector("#inputPaginasTotales").value;
 
 
-    if(!titulo || !autor || !paginasTotales || Number(paginasTotales) <= 0){
+    if (!titulo || !autor || !paginasTotales || Number(paginasTotales) <= 0) {
         alert("Por favor, rellena todos los campos y asegúrate que las páginas sean un número positivo");
         return;
     }
 
-    bibliotecaManager.agregarLibro(titulo,autor,paginasTotales);
+    bibliotecaManager.agregarLibro(titulo, autor, paginasTotales);
 
     bibliotecaManager.guardarBiblioteca();
 
@@ -29,14 +31,14 @@ $botonAgregarLibro.addEventListener("click", function (e) {
 
 })
 
-function handleLeerPaginas (indiceLibro, cantidad){
+function handleLeerPaginas(indiceLibro, cantidad) {
     bibliotecaManager.leerPaginasDeLibro(indiceLibro, cantidad);
     bibliotecaManager.guardarBiblioteca()
 
     actualizarUI();
 }
 
-function handleEliminarLibro (indiceLibro){
+function handleEliminarLibro(indiceLibro) {
     bibliotecaManager.eliminarLibro(indiceLibro);
     bibliotecaManager.guardarBiblioteca();
 
@@ -44,12 +46,17 @@ function handleEliminarLibro (indiceLibro){
 }
 
 
-function actualizarUI (){
+function actualizarUI() {
 
     const librosActuales = bibliotecaManager.obtenerLibros();
-    uiManager.renderizarLibros(librosActuales,handleLeerPaginas,handleEliminarLibro);
+    uiManager.renderizarLibros(librosActuales, handleLeerPaginas, handleEliminarLibro);
 }
 
+$botonBorrarBiblioteca.addEventListener("click", function(){
+    bibliotecaManager.borrarBiblioteca();
+
+    actualizarUI();
+})
 
 
 

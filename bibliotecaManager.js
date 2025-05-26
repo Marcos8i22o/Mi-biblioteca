@@ -1,7 +1,7 @@
 
 import { Libro } from "./Libro.js"
 
-const miBiblioteca = [];
+let miBiblioteca = [];
 
 
 export function agregarLibro(titulo, autor, paginasTotales, paginasLeidas) {
@@ -37,10 +37,12 @@ export function eliminarLibro(indiceLibro) {
 export function cargarBiblioteca() {
     const librosGuardados = localStorage.getItem("misLibrosDeLaBiblioteca")
 
-    Object.values(JSON.parse(librosGuardados)).forEach((libro) => {
-        agregarLibro(libro.titulo, libro.autor, libro.paginasTotales, libro.paginasLeidas)
-        
-    })
+    if (librosGuardados !== null) {
+        Object.values(JSON.parse(librosGuardados)).forEach((libro) => {
+            agregarLibro(libro.titulo, libro.autor, libro.paginasTotales, libro.paginasLeidas)
+
+        })
+    }
 
 }
 
@@ -50,3 +52,9 @@ export function guardarBiblioteca() {
 }
 
 
+
+export function borrarBiblioteca() {
+    localStorage.removeItem("misLibrosDeLaBiblioteca");
+    miBiblioteca = [];
+}
+ main

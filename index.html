@@ -16,17 +16,17 @@
     <p class="h1 text-center">BIBLIOTECA DE LIBROS</p>
     <!--Form-->
     <form id="formulario">
-      <div class="mb-3">
-        <label for="inputTitulo" class="form-label">Título</label>
-        <input type="text" id="inputTitulo" />
+      <div class="form-floating mb-3">
+        <label for="inputTitulo"></label>
+        <input type="text" id="inputTitulo" placeholder="Título"/>
       </div>
-      <div class="mb-3">
-        <label for="inputAutor">Autor</label>
-        <input type="text" id="inputAutor" />
+      <div class="form-floating mb-3">
+        <label for="inputAutor"></label>
+        <input type="text" id="inputAutor" placeholder="Autor" />
       </div>
-      <div class="mb-3">
-        <label for="inputPaginasTotales">Cantidad de páginas</label>
-        <input type="number" id="inputPaginasTotales" />
+      <div class="form-floating mb-3">
+        <label for="inputPaginasTotales"></label>
+        <input type="number" id="inputPaginasTotales" placeholder="Cantidad de páginas"/>
       </div>
 
       <button type="submit" class="btn btn-info btn-sm" id="btn-agregar-libro">
@@ -36,8 +36,8 @@
 
     <!--Lista de libros-->
 
-    <table class="table table-secondary oculto table-striped">
-      <thead>
+    <table class="table table-secondary oculto table-striped table-bordered container-fluid align-middle">
+      <thead class="table-dark">
         <tr>
           <th scope="col">#</th>
           <th scope="col">Título</th>
@@ -46,6 +46,8 @@
           <th scope="col">Páginas leídas</th>
           <th scope="col">Páginas restantes</th>
           <th scope="col"></th>
+          <th scope="col" class="col-3"></th>
+          
         </tr>
       </thead>
 
@@ -57,6 +59,7 @@
       </tbody>
     </table>
 
+    <button type="submit" id="btn-borrar-biblioteca" class="btn btn-warning text-center">Borrar biblioteca</button>
     <script type="module" src="main.js"></script>
   </body>
 </html>
