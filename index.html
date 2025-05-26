@@ -9,7 +9,7 @@
       integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <title>Libros</title>
   </head>
   <body>
@@ -18,7 +18,7 @@
     <form id="formulario">
       <div class="form-floating mb-3">
         <label for="inputTitulo"></label>
-        <input type="text" id="inputTitulo" placeholder="Título"/>
+        <input type="text" id="inputTitulo" placeholder="Título" />
       </div>
       <div class="form-floating mb-3">
         <label for="inputAutor"></label>
@@ -26,17 +26,30 @@
       </div>
       <div class="form-floating mb-3">
         <label for="inputPaginasTotales"></label>
-        <input type="number" id="inputPaginasTotales" placeholder="Cantidad de páginas"/>
+        <input
+          type="number"
+          id="inputPaginasTotales"
+          placeholder="Cantidad de páginas"
+        />
       </div>
 
       <button type="submit" class="btn btn-info btn-sm" id="btn-agregar-libro">
         Agregar libro
       </button>
+      <button
+        type="submit"
+        id="btn-borrar-biblioteca"
+        class="btn btn-warning btn-sm text-center"
+      >
+        Borrar biblioteca
+      </button>
     </form>
 
     <!--Lista de libros-->
 
-    <table class="table table-secondary oculto table-striped table-bordered container-fluid align-middle">
+    <table
+      class="table table-secondary oculto table-striped table-bordered container-fluid align-middle"
+    >
       <thead class="table-dark">
         <tr>
           <th scope="col">#</th>
@@ -47,19 +60,14 @@
           <th scope="col">Páginas restantes</th>
           <th scope="col"></th>
           <th scope="col" class="col-3"></th>
-          
         </tr>
       </thead>
 
-      <tbody>
-   
-      <tbody id="lista">
-       
-        
-      </tbody>
+      <tbody></tbody>
+
+      <tbody id="lista"></tbody>
     </table>
 
-    <button type="submit" id="btn-borrar-biblioteca" class="btn btn-warning text-center">Borrar biblioteca</button>
     <script type="module" src="main.js"></script>
   </body>
 </html>

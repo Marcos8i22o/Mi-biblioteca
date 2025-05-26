@@ -1,3 +1,7 @@
+body {
+  background-color: aliceblue;
+}
+
 #inputPaginasLeidas {
   width: 6em;
   margin-right: 1em;
@@ -40,6 +44,15 @@ label {
 
 #btn-agregar-libro :hover {
   background-color: antiquewhite;
+}
+
+#btn-borrar-biblioteca {
+  padding: 1%;
+  cursor: pointer;
+}
+
+#btn-borrar-biblioteca :hover{
+  background-color: black;
 }
 
 .inputPaginasLeidas {
