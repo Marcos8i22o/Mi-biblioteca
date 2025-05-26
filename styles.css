@@ -29,6 +29,7 @@ label {
   padding: 0.2em;
   margin-bottom: 10px;
   background-color: bisque;
+  
 }
 
 #btn-agregar-libro {
@@ -54,17 +55,23 @@ label {
   color: aquamarine;
 }
 
-#barra-progreso {
+.barra-progreso {
   width: 25%;
   background-color: grey;
+  
 }
 
-#mi-progreso {
+.mi-progreso {
   height: 30px;
   background-color: #04aa6d;
   text-align: center; 
   line-height: 30px; 
   color: white;
+  
 }
 
+.encabezado-de-tabla{
+    background-color: #373b3e;
+    color: aliceblue;
+}
 

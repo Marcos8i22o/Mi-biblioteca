@@ -41,7 +41,13 @@ export function renderizarLibros(libros, onLeerPaginasCallback, onEliminarLibroC
         const paginasTotales = document.createElement("td");
         const paginasLeidas = document.createElement("td");
         const paginasRestantes = document.createElement("td");
+        const barraDeProgreso = document.createElement("td");
         const acciones = document.createElement("td");
+
+        paginasTotales.classList.add("text-center")
+        paginasLeidas.classList.add("text-center");
+        paginasRestantes.classList.add("text-center");
+
 
         titulo.textContent = libro.titulo;
         autor.textContent = libro.autor;
@@ -79,21 +85,21 @@ export function renderizarLibros(libros, onLeerPaginasCallback, onEliminarLibroC
 
         
         const $barraDeProgreso = document.createElement("div");
-        $barraDeProgreso.id = "barra-progreso";
+        $barraDeProgreso.className = "barra-progreso";
 
         const $miProgreso = document.createElement("div");
-        $miProgreso.id = "mi-progreso";
+        $miProgreso.className = "mi-progreso";
         const resultado = (libro.paginasLeidas * 100)/libro.paginasTotales
         $miProgreso.textContent = `${Math.trunc(resultado)}%`;
-        $miProgreso.style.width = $miProgreso.textContent;
+        $miProgreso.style.width = `${resultado}%`;
         
         $barraDeProgreso.appendChild($miProgreso);
+        barraDeProgreso.appendChild($barraDeProgreso);
 
         acciones.appendChild(inputPaginasLeidas);
         acciones.appendChild($botonLeerPaginas);
         acciones.appendChild($botonEliminarLibro);
-        acciones.appendChild($barraDeProgreso)
-
+        
         $fila.appendChild($encabezadoDeFila);
         $fila.appendChild(titulo);
         $fila.appendChild(autor);
@@ -101,6 +107,7 @@ export function renderizarLibros(libros, onLeerPaginasCallback, onEliminarLibroC
         $fila.appendChild(paginasLeidas);
         $fila.appendChild(paginasRestantes);
         $fila.appendChild(acciones);
+        $fila.appendChild(barraDeProgreso)
 
         $lista.appendChild($fila);
         
